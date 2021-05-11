@@ -27,7 +27,7 @@ namespace PaymentContext.Domain.Entities
         {
             AddNotifications(new Contract()
             .Requires()
-            .IsGreaterThan(DateTime.Now, payment.PaidDate, "Subscription.Payments", "A data do pagamento deve ser futura."));
+            .IsLowerThan(DateTime.Now, payment.PaidDate, "Subscription.Payments", "A data do pagamento deve ser futura."));
             if (Valid)
                 _payments.Add(payment);
         }
