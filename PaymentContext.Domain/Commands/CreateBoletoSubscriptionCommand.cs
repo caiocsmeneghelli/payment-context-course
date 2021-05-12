@@ -11,7 +11,7 @@ namespace PaymentContext.Domain.Commands
         // Student
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Document { get; set; }
+        public string DocumentNumber { get; set; }
         public string Email { get; set; }
 
 
@@ -35,10 +35,10 @@ namespace PaymentContext.Domain.Commands
         // Address
 
         public string Street { get; set; }
-        public string Number { get; set; }
+        public string AddressNumber { get; set; }
         public string Neighborhood { get; set; }
         public string City { get; set; }
-        public string Estate { get; set; }
+        public string State { get; set; }
         public string Country { get; set; }
         public string ZipCode { get; set; }
 
