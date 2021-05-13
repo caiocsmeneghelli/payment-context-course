@@ -26,7 +26,7 @@ namespace PaymentContext.Tests
             command.BoletoNumber = "1232233222";
 
             command.PaymentNumber = "123131313";
-            command.PaidDate = DateTime.Now;
+            command.PaidDate = DateTime.Now.AddDays(5);
             command.ExpireDate = DateTime.Now.AddMonths(1);
             command.Total = 60;
             command.TotalPaid = 60;
