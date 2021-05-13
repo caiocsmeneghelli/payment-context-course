@@ -62,15 +62,18 @@ namespace PaymentContext.Domain.Handlers
             // Aplicar as validações
             AddNotifications(name, document, email, address, student, subscription, payment);
 
+            // Checar notificações
+            if (Invalid)
+                return new CommandResult(false, "Não foi possivel realizar sua assinatura.");
+
             // Salvar as informações
             _repository.CreateSubscription(student);
 
             // Enviar email de boas vindas.
             _emailService.Send(student.Name.ToString(), student.Email.Address, "Boas Vindas", $"Welcome {student.Name.ToString()}, sua assinatura foi criada!");
 
-            // Retornar email de boas vindas.
-
             // Retornar informações.
+
 
             return new CommandResult(true, "Assinatura realizada com sucesso.");
         }
